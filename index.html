@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lucas Daez</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>try{var s=localStorage.getItem('theme');if(s==='dark'||s==='light')document.documentElement.setAttribute('data-theme',s);}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#dbe8cb; --ink:#3b4a54; --muted:#4f6357; --line:#a9bfa3; --accent:#5b7a66; --accent-text:#456050; --accent-ink:#ffffff;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#3b4a54;--ink:#ebf4dd;--muted:#aec3b3;--line:#566873;--accent:#8faa8b;--accent-text:#b9d6b3;--accent-ink:#2a363e}
+}
+:root[data-theme="dark"]{--paper:#3b4a54;--ink:#ebf4dd;--muted:#aec3b3;--line:#566873;--accent:#8faa8b;--accent-text:#b9d6b3;--accent-ink:#2a363e}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.125rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent-text);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+nav{max-width:64rem;margin:0 auto;padding:.9rem 1.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.brand{font:800 1.2rem var(--head);letter-spacing:-.02em;color:var(--ink);text-decoration:none;margin-right:auto}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+nav ul a,.ext{font:500 1rem var(--head);color:var(--ink);text-decoration:none}
+nav ul a:hover,.ext:hover{color:var(--accent)}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);font:500 .85rem var(--head);padding:.35rem .8rem;border-radius:999px;cursor:pointer}
+.theme:hover{border-color:var(--accent)}
+main{max-width:64rem;margin:0 auto;padding:0 1.5rem}
+.hero{padding:6rem 0 5rem}
+.hi{font:500 1.4rem var(--head);margin:0 0 .5rem;color:var(--muted)}
+h1{font:800 clamp(2.8rem,8vw,5.6rem)/.95 var(--head);letter-spacing:-.04em;margin:0 0 1.5rem;max-width:14ch}
+.role{font:500 1.3rem/1.4 var(--head);max-width:34rem;margin:0 0 2.25rem}
+.btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{display:inline-block;font:800 1rem var(--head);padding:.75rem 1.4rem;border-radius:6px;text-decoration:none;border:2px solid var(--accent)}
+.btn.solid{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent-text)}
+.btn:hover{opacity:.85}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.8rem,4vw,2.4rem)/1.1 var(--head);letter-spacing:-.02em;margin:0 0 1.5rem}
+p{margin:0 0 1rem;max-width:40rem}
+.empty{color:var(--muted);font-style:italic}
+.contact-mail{font:800 clamp(1.2rem,3.5vw,1.8rem) var(--head);word-break:break-word}
+.links{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:.4rem}
+.links span{color:var(--muted);display:inline-block;min-width:5.5rem}
+.lead{color:var(--muted)}
+.job{display:grid;grid-template-columns:9rem 1fr;gap:1.5rem;padding-bottom:2rem}
+.job:last-child{padding-bottom:0}
+.job time{color:var(--muted);font:500 1rem var(--head);padding-top:.25rem}
+.job h3{font:800 1.2rem/1.25 var(--head);margin:0}
+.job .org{font:500 1rem var(--head);color:var(--muted);margin:.15rem 0 .75rem}
+.job ul{margin:0;padding-left:1.1rem;max-width:38rem}
+.job li{margin-bottom:.35rem}
+@media (max-width:40rem){.job{grid-template-columns:1fr;gap:.25rem}}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.card{border:1px solid var(--line);border-radius:8px;padding:1.25rem}
+.card h3{font:800 1.1rem/1.2 var(--head);margin:0 0 .5rem}
+.card p{margin:0;font-size:1rem;color:var(--muted)}
+.projs{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));align-items:start}
+.proj{border:1px solid var(--line);border-radius:8px;transition:border-color .2s}
+.proj:hover,.proj:focus-within{border-color:var(--accent)}
+.proj-btn{all:unset;box-sizing:border-box;display:grid;gap:.35rem;width:100%;padding:1.25rem 3rem 1.25rem 1.25rem;cursor:pointer;position:relative}
+.proj-btn:focus-visible{outline:3px solid var(--accent);outline-offset:-3px;border-radius:8px}
+.proj-title{font:800 1.15rem/1.25 var(--head)}
+.proj-tag{font:500 .85rem var(--head);color:var(--muted)}
+.chev{position:absolute;right:1.4rem;top:1.5rem;width:.6rem;height:.6rem;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg);transition:transform .2s}
+.proj-btn[aria-expanded="true"] .chev{transform:rotate(-135deg);top:1.7rem}
+.proj-body{padding:0 1.25rem 1.25rem;font-size:1rem}
+.proj-body[hidden]{display:none}
+.proj-body p{margin:0 0 .6rem;max-width:none}
+.proj-body strong{font-family:var(--head)}
+.contact-mail,.links a{color:var(--ink);text-decoration-color:var(--line);text-decoration-thickness:1px}
+.contact-mail{font-weight:500}
+.contact-mail:hover,.links a:hover{color:var(--muted)}
+main .hero{margin-top:1.5rem;padding:clamp(2.5rem,7vw,5rem) clamp(1.5rem,5vw,4rem);border-radius:16px;background:radial-gradient(60rem 30rem at 85% -10%,rgba(143,171,139,.3),transparent 60%),linear-gradient(145deg,#2b373f 0%,#3b4a54 55%,#4b6657 100%)}
+.hero .hi{color:#b3c6b6}
+.hero h1{color:#ebf4dd;background:linear-gradient(100deg,#ffffff 0%,#ebf4dd 28%,#a9c3a4 55%,#d5e6cf 80%,#ffffff 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 18px rgba(143,171,139,.4));animation:shine 5s ease-in-out infinite alternate}
+@keyframes shine{from{background-position:100% 0}to{background-position:0 0}}
+.hero .role{position:relative;display:grid;color:#c3dcba}
+.hero .role>span{grid-area:1/1}
+.hero .role .sizer{visibility:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#typed.typing::after{content:"";display:inline-block;width:2px;height:1.1em;background:#c3dcba;margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero .btn.solid{background:#ebf4dd;color:#2b373f;border-color:#ebf4dd}
+.hero .btn.ghost{color:#ebf4dd;border-color:#8faa8b}
+@media (prefers-reduced-motion:reduce){.hero h1{animation:none}#typed.typing::after{animation:none}}
+header{transition:transform .3s ease}
+header.hide{transform:translateY(calc(-100% - env(safe-area-inset-top,0px)))}
+header.hide:focus-within{transform:none}
+@media (prefers-reduced-motion:reduce){header{transition:none}}
+main .contact-panel{margin:0 0 2.5rem;padding:clamp(2.5rem,6vw,4rem) 1.5rem;border:0;border-radius:16px;text-align:center;background:linear-gradient(145deg,#2b373f 0%,#3b4a54 55%,#4b6657 100%)}
+.contact-panel h2{color:#fff;margin-bottom:1rem}
+.contact-panel p{color:#b3c6b6;margin:0 auto 2rem}
+.contact-panel .links{justify-items:center;gap:.9rem;margin:0}
+.contact-panel .links li{display:flex;align-items:center;gap:.7rem;font:400 1rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-word}
+.contact-panel .links svg{color:#b9d6b3;flex:none}
+.contact-panel .links a{color:#ebf4dd;text-decoration-color:#6c8576}
+.contact-panel .links a:hover{color:#fff}
+.contact-panel a:focus-visible{outline-color:#ebf4dd}
+footer{max-width:64rem;margin:0 auto;padding:2rem 1.5rem 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+@media (max-width:40rem){.hero{padding:3.5rem 0 3rem}nav ul{order:3;width:100%;gap:1.1rem}}
+@media print{.theme,.btns,header{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <nav aria-label="Main">
+    <a class="brand" href="#top">LASD</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="ext" href="https://www.linkedin.com/in/lucas-daez-8b27883b7">LinkedIn</a>
+    <button class="theme" id="theme" type="button">Theme</button>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <p class="hi">Hi, I'm</p>
+    <h1>Lucas Alfonso Severino Daez.</h1>
+    <p class="role"><span class="sr">A Grade 12 Senior High School student at FEU Alabang studying Business, Accounting, and Entrepreneurship (BAE).</span><span class="sizer" aria-hidden="true">A Grade 12 Senior High School student at FEU Alabang studying Business, Accounting, and Entrepreneurship (BAE).</span><span id="typed" aria-hidden="true">A Grade 12 Senior High School student at FEU Alabang studying Business, Accounting, and Entrepreneurship (BAE).</span></p>
+    <div class="btns">
+      <a class="btn solid" href="#projects">View My Work</a>
+      <a class="btn ghost" href="#contact">Let's Talk</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! My name is Lucas Alfonso S. Daez. I am currently a senior high school student at FEU Alabang with a strong foundation in entrepreneurship and business operations. Driven by an ambition to build and lead businesses, I am pursuing admission to the Bachelor of Science in Business Administration Major in Business Management (BSBA-BM) program at De La Salle-College of Saint Benilde.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Working Experience</h2>
+    <div class="job">
+      <time>2025 – 2026</time>
+      <div>
+        <h3>Assistant, Restaurant</h3>
+        <p class="org">Amelia's Bistro &amp; Patisserie</p>
+        <ul>
+          <li>Maintained kitchen sanitation, dishwashing, and equipment care during daily operations.</li>
+          <li>Managed Excel spreadsheets for inventory and sales tracking</li>
+          <li>Assisted in patisserie prep and baking to maintain daily store inventory.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="job">
+      <time>2024 – 2025</time>
+      <div>
+        <h3>Market Researcher</h3>
+        <p class="org">Minesec (Hong Kong)</p>
+        <ul>
+          <li>Conducted competitor analysis in Asia (India &amp; Philippines)</li>
+          <li>Submitted findings to support business strategy</li>
+          <li>Collaborated with supervisors and directors on market insights</li>
+        </ul>
+      </div>
+    </div>
+    <div class="job">
+      <time>2024 – 2025</time>
+      <div>
+        <h3>Student Intern</h3>
+        <p class="org">VastTrack (Hong Kong)</p>
+        <ul>
+          <li>Participated in AI-enabled career coaching and leadership training</li>
+          <li>Worked in teams to solve real business problems under CEO's Andy Lau and Michelle Leung's guidance.</li>
+          <li>Gained exposure to international internship programs and life skills development</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills &amp; Academic Focus</h2>
+    <ul class="grid">
+      <li class="card"><h3>Market &amp; Academic Research</h3><p>Gathering and evaluating sources so ideas are backed by evidence.</p></li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="empty">Coming soon.</p>
+  </section>
+
+  <section id="contact" class="contact-panel">
+    <h2>What's Next?</h2>
+    <p>I am currently open to new opportunities, interesting projects, or just connecting with fellow students and entrepreneurs. Drop a message, and I'll get back to you as soon as possible!</p>
+    <ul class="links">
+      <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v.4l-10 6.2L2 6.4V6a1 1 0 0 1 1-1zm-1 3.75V18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V8.75l-9.47 5.9a1 1 0 0 1-1.06 0L2 8.75z"/></svg><a href="mailto:ladaez07@gmail.com">ladaez07@gmail.com</a></li>
+      <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+639774684580">+63 977 468 4580</a></li>
+      <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3V9.5zm7 0h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06C21.6 9.04 22 11.6 22 14.9V21h-4v-5.4c0-1.3-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.86V21h-4V9.5z"/></svg><a href="https://www.linkedin.com/in/lucas-daez-8b27883b7">LucasDaez</a></li>
+    </ul>
+  </section>
+</main>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var t=root.getAttribute('data-theme');
+    var dark=t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+})();
+</script>
+<script>
+document.querySelectorAll('.proj-btn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',String(!open));
+    document.getElementById(b.getAttribute('aria-controls')).hidden=open;
+  });
+});
+</script>
+<script>
+(function(){
+  var el=document.getElementById('typed');
+  if(!el||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var text=el.textContent,i=0;
+  el.textContent='';
+  el.classList.add('typing');
+  setTimeout(function tick(){
+    i++;
+    el.textContent=text.slice(0,i);
+    if(i<text.length){setTimeout(tick,32);}
+    else{setTimeout(function(){el.classList.remove('typing');},2500);}
+  },600);
+})();
+</script>
+<script>
+(function(){
+  var h=document.querySelector('header'),last=window.scrollY,tick=false;
+  function update(){
+    var y=window.scrollY,d=y-last;
+    if(y<80){h.classList.remove('hide');last=y;}
+    else if(d>6){h.classList.add('hide');last=y;}
+    else if(d<-6){h.classList.remove('hide');last=y;}
+    tick=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!tick){tick=true;requestAnimationFrame(update);}
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
